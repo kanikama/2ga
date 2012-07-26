@@ -26,7 +26,45 @@
     ?>
 
 
+<div id="search-replace">
+	<script>
+$(function() {
+                  $("#search-replace").dialog(
+                      { 
+                        autoOpen: false,
+                        buttons: { "Close": function() { $(this).dialog("close");}},
+                        title: "Find/Replace",
+                        resizable: false
+                      });
+                });
+</script>
+	<form>
+		<table>
+			<tr>
+				<td>Find:</td>
+				<td><input type="text" name="find"></td>
+			</tr>
+			<tr>
+				<td>Replace with:</td>
+				<td><input type="text" name="replace_with"></td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="scope" value="all_files" checked>All
+					Files</td>
+				<td><input type="radio" name="scope" value="this_file">This File</td>
+			</tr>
 
+			<tr>
+				<td><input type="button" name="previous" value="previous"></td>
+				<td><input type="button" name="next" value="next" onclick="search()"></td>
+			</tr>
+			<tr>
+				<td><input type="button" name="replace" value="replace" disabled="disabled"></td>
+				<td><input type="button" name="replace" value="replace_all" disabled="disabled"></td>
+			</tr>
+		</table>
+	</form>
+</div>
 
 
 <div class="container">

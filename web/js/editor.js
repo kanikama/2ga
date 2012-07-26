@@ -108,6 +108,11 @@ var createEditor = (function(editorid, filename, url) {
                 e.stop();
                 return startComplete();
               }
+              // Hook into command-f(Mac)
+              if (e.keyCode == 70 && (e.ctrlKey || e.metaKey) && !e.altKey) {
+                e.stop();
+                $("#search-replace").dialog('open')
+              }
             },
             onChange: function() {
               // console.log(changed.);
