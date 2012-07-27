@@ -32,7 +32,7 @@ $(function() {
                   $("#search-replace").dialog(
                       { 
                         autoOpen: false,
-                        buttons: { "Close": function() { $(this).dialog("close");}},
+                        buttons: { "Close": function() { $('.CodeMirror-lines').removeHighlight(); $(this).dialog("close");}},
                         title: "Find/Replace",
                         resizable: false
                       });
@@ -42,16 +42,16 @@ $(function() {
 		<table>
 			<tr>
 				<td>Find:</td>
-				<td><input type="text" name="find"></td>
+				<td><input type="text" name="find" onchange="highlight(this.value)"></td>
 			</tr>
 			<tr>
 				<td>Replace with:</td>
 				<td><input type="text" name="replace_with"></td>
 			</tr>
 			<tr>
-				<td><input type="radio" name="scope" value="all_files" checked>All
+				<td><input type="radio" name="scope" value="all_files">All
 					Files</td>
-				<td><input type="radio" name="scope" value="this_file">This File</td>
+				<td><input type="radio" name="scope" value="this_file" checked>This File</td>
 			</tr>
 
 			<tr>
@@ -59,7 +59,7 @@ $(function() {
 				<td><input type="button" name="next" value="next" onclick="search()"></td>
 			</tr>
 			<tr>
-				<td><input type="button" name="replace" value="replace" onclick="replace(find)"></td>
+				<td><input type="button" name="replace" value="replace" disabled="disabled" onclick="replace()"></td>
 				<td><input type="button" name="replace" value="replace_all" disabled="disabled"></td>
 			</tr>
 		</table>
