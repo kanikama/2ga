@@ -59,7 +59,7 @@ $(function() {
 				<td><input type="button" name="next" value="next" onclick="search()"></td>
 			</tr>
 			<tr>
-				<td><input type="button" name="replace" value="replace" disabled="disabled"></td>
+				<td><input type="button" name="replace" value="replace" onclick="replace(find)"></td>
 				<td><input type="button" name="replace" value="replace_all" disabled="disabled"></td>
 			</tr>
 		</table>

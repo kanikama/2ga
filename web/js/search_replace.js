@@ -5,5 +5,6 @@ function search(){
 }
 
 function replace(keyword){
-  
+  $('.CodeMirror-lines').highlight('keyword');
 }
+
